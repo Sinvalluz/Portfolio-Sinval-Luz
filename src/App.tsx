@@ -1,5 +1,5 @@
 function App() {
-	return <h1 className='text-red-500'>Testando tailwind</h1>;
+	return;
 }
 
 export default App;
