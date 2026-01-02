@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import NavigationAnchor from '../ui/NavigationAnchor';
 import { Menu, X } from 'lucide-react';
+import { useState } from 'react';
 import GithubIcon from '../ui/GithubIcon';
+import NavigationAnchor from '../ui/NavigationAnchor';
 
 const Header = () => {
 	const [menuBtn, setMenuBtn] = useState<boolean>(false);
