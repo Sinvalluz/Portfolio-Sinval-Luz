@@ -15,12 +15,15 @@
 		"indentStyle": "tab",
 		"lineEnding": "crlf",
 		"indentWidth": 4,
-		"lineWidth": 120
+		"lineWidth": 80
 	},
 	"linter": {
 		"enabled": true,
 		"rules": {
 			"recommended": true,
+			"a11y": {
+				"noSvgWithoutTitle": "off"
+			},
 			"style": {
 				"noNonNullAssertion": "off"
 			}
