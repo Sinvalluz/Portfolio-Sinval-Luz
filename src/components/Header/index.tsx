@@ -1,14 +1,21 @@
 import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import GithubIcon from '../ui/GithubIcon';
 import NavigationAnchor from '../ui/NavigationAnchor';
 
 const Header = () => {
 	const [menuBtn, setMenuBtn] = useState<boolean>(false);
 
+	useEffect(() => {
+		window.addEventListener('resize', () => {
+			if (window.innerWidth > 768) {
+				setMenuBtn(false);
+			}
+		});
+	}, []);
 	return (
 		<header
-			className={`text-white  flex flex-col justify-between px-6 py-4 border-b-2 border-[#0D0D0D] backdrop-blur-md ${menuBtn ? 'gap-8' : 'gap-4'}`}
+			className={`text-white  flex flex-col justify-between px-6 py-4 border-b-2 border-[#0D0D0D] backdrop-blur-md md:flex-row gap-8`}
 		>
 			<div className='flex justify-between items-center '>
 				<h1 className='text-2xl text-white hover:text-white/80 transition-colors cursor-alias'>
@@ -16,25 +23,25 @@ const Header = () => {
 				</h1>
 				<button
 					type='button'
-					className='cursor-pointer'
+					className='cursor-pointer md:hidden'
 					onClick={() => setMenuBtn(!menuBtn)}
 				>
 					{menuBtn ? <X /> : <Menu />}
 				</button>
 			</div>
 			<nav
-				className={`flex  text-xl ${menuBtn ? 'flex-col gap-4' : 'hidden'}`}
+				className={`flex-col gap-4 text-xl md:flex-row md:flex md:items-center ${menuBtn ? 'flex' : 'hidden'}`}
 			>
 				<NavigationAnchor name='Início' />
 				<NavigationAnchor name='Sobre' />
 				<NavigationAnchor name='Projetos' />
 			</nav>
 			<div
-				className={`gap-4 items-center ${menuBtn ? 'flex' : 'hidden'}`}
+				className={`gap-4 items-center md:flex ${menuBtn ? 'flex' : 'hidden'}`}
 			>
 				<button
 					type='button'
-					className='border p-2 rounded-full cursor-pointer'
+					className='border p-2 rounded-full cursor-pointer hover:bg-white/10 transition-colors'
 				>
 					PT | EN
 				</button>
