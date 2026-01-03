@@ -45,7 +45,11 @@ const Header = () => {
 				>
 					PT | EN
 				</button>
-				<a href='https://github.com/Sinvalluz'>
+				<a
+					href='https://github.com/Sinvalluz'
+					target='_blank'
+					rel='noreferrer'
+				>
 					<GithubIcon />
 				</a>
 			</div>
