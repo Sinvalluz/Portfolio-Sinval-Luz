@@ -1,6 +1,6 @@
 import { Download } from 'lucide-react';
-import { downloadResume } from '../../utils/downloadResume';
-import LinkedinIcon from '../ui/LinkedinIcon';
+import { downloadResume } from '../../../utils/downloadResume';
+import LinkedinIcon from '../../ui/LinkedinIcon';
 
 const PresentationSection = () => {
 	return (

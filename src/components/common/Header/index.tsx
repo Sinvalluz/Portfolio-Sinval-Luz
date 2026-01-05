@@ -1,12 +1,10 @@
 import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
-import GithubIcon from '../ui/GithubIcon';
-import NavigationAnchor from '../ui/NavigationAnchor';
+import GithubIcon from '../../ui/GithubIcon';
+import NavigationAnchor from '../../ui/NavigationAnchor';
 
 const Header = () => {
 	const [menuBtn, setMenuBtn] = useState<boolean>(false);
-	const { menu } = useParams();
 
 	useEffect(() => {
 		window.addEventListener('resize', () => {
@@ -32,7 +30,7 @@ const Header = () => {
 				</button>
 			</div>
 			<nav
-				className={`flex-col gap-4 text-xl md:flex-row md:flex md:items-center ${menuBtn ? 'flex' : 'hidden'}`}
+				className={`flex-col gap-6 text-base md:flex-row md:flex md:items-center ${menuBtn ? 'flex' : 'hidden'}`}
 			>
 				<NavigationAnchor
 					name='Início'
