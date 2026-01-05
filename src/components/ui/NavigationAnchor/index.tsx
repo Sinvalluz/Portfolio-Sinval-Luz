@@ -1,15 +1,21 @@
+import { NavLink, useMatch } from 'react-router';
+
 type NavigationAnchorProps = {
 	name: string;
+	params: string;
 };
 
-const NavigationAnchor = ({ name }: NavigationAnchorProps) => {
+const NavigationAnchor = ({ name, params }: NavigationAnchorProps) => {
+	const match = useMatch(`/${params}`);
 	return (
-		<a
-			href='/'
-			className='text-white/60 hover:text-white/80 transition-colors '
+		<NavLink
+			to={`/${params}`}
+			className={`transition-colors ${
+				match ? 'text-white' : 'text-white/60 hover:text-white/80'
+			}`}
 		>
 			{name}
-		</a>
+		</NavLink>
 	);
 };
 

@@ -1,10 +1,12 @@
 import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import GithubIcon from '../ui/GithubIcon';
 import NavigationAnchor from '../ui/NavigationAnchor';
 
 const Header = () => {
 	const [menuBtn, setMenuBtn] = useState<boolean>(false);
+	const { menu } = useParams();
 
 	useEffect(() => {
 		window.addEventListener('resize', () => {
@@ -32,9 +34,18 @@ const Header = () => {
 			<nav
 				className={`flex-col gap-4 text-xl md:flex-row md:flex md:items-center ${menuBtn ? 'flex' : 'hidden'}`}
 			>
-				<NavigationAnchor name='Início' />
-				<NavigationAnchor name='Sobre' />
-				<NavigationAnchor name='Projetos' />
+				<NavigationAnchor
+					name='Início'
+					params=''
+				/>
+				<NavigationAnchor
+					name='Sobre'
+					params='sobre'
+				/>
+				<NavigationAnchor
+					name='Projetos'
+					params='projetos'
+				/>
 			</nav>
 			<div
 				className={`gap-4 items-center md:flex ${menuBtn ? 'flex' : 'hidden'}`}
